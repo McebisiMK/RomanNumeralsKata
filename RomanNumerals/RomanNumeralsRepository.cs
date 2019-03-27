@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RomanNumeralsKata
 {
-    public class RomanNumeralsRepository:IRomanNumeralsRepository
+    public class RomanNumeralsRepository : IRomanNumeralsRepository
     {
 
         public string GetHundredsNumerals(int number)
@@ -44,7 +44,14 @@ namespace RomanNumeralsKata
 
         public string GetThousandsNumerals(int number)
         {
-            throw new NotImplementedException();
+            var romanNumerals = new Dictionary<int, string>();
+
+            romanNumerals.Add(0, "");
+            romanNumerals.Add(1000, "M");
+            romanNumerals.Add(2000, "MM");
+            romanNumerals.Add(3000, "MMM");
+
+            return romanNumerals[number];
         }
 
         public string GetUnitNumerals(int number)

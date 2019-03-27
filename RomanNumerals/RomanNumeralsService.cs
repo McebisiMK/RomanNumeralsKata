@@ -2,7 +2,7 @@
 
 namespace RomanNumeralsKata
 {
-    internal class RomanNumeralsService
+    public class RomanNumeralsService
     {
         private IRomanNumeralsRepository romanNumeralsRepository;
 
@@ -21,11 +21,18 @@ namespace RomanNumeralsKata
             var units = getUnits(number);
             var tens = getTens(number,units);
             var hundreds = getHundreds(number, tens, units);
+            var thousands = getThousands(number, hundreds, tens, units);
             var unitsNumerals = romanNumeralsRepository.GetUnitNumerals(units);
             var tensNumerals = romanNumeralsRepository.GetTensNumerals(tens);
             var hundredsNumerals = romanNumeralsRepository.GetHundredsNumerals(hundreds);
+            var thousandsNumerals = romanNumeralsRepository.GetThousandsNumerals(thousands);
 
-            return $"{hundredsNumerals}{tensNumerals}{unitsNumerals}";
+            return $"{thousandsNumerals}{hundredsNumerals}{tensNumerals}{unitsNumerals}";
+        }
+
+        private int getThousands(int number, int hundreds, int tens, int units)
+        {
+            return (number - hundreds - tens - units);
         }
 
         private int getHundreds(int number, int tens, int units)

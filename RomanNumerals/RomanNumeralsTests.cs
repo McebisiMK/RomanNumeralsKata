@@ -59,9 +59,26 @@ namespace RomanNumeralsKata
 
         }
 
+        [TestCase(1000, "M")]
+        [TestCase(2000, "MM")]
+        [TestCase(3000, "MMM")]
+        public void GetRomanNumerals_GivenNumberFromOneThousandToThreeThousand_ShouldReturnCorrespondingRomanNumeral(int number, string expected)
+        {
+            //----------------Arrange--------------------------------
+            var romanNumeralsService = CreateRomanNumeralsService();
+
+            //----------------Arrange--------------------------------
+            var actual = romanNumeralsService.GetRomanNumeral(number);
+
+            //----------------Arrange--------------------------------
+            Assert.AreEqual(expected, actual);
+
+        }
+
         [TestCase(10, "X")]
         [TestCase(14, "XIV")]
         [TestCase(15, "XV")]
+        [TestCase(16, "XVI")]
         [TestCase(19, "XIX")]
         public void GetRomanNumerals_GivenNumberFromTenToNineteen_ShouldReturnCorrespondingRomanNumeral(int number, string expected)
         {
