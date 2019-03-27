@@ -12,6 +12,7 @@ namespace RomanNumeralsKata
         {
             var unitsRomanNumerals = new Dictionary<int, string>();
 
+            unitsRomanNumerals.Add(0, "");
             unitsRomanNumerals.Add(1, "I");
             unitsRomanNumerals.Add(2, "II");
             unitsRomanNumerals.Add(3, "III");
@@ -29,6 +30,7 @@ namespace RomanNumeralsKata
         {
             var tensRomanNumerals = new Dictionary<int, string>();
 
+            tensRomanNumerals.Add(0, "");
             tensRomanNumerals.Add(10, "X");
             tensRomanNumerals.Add(20, "XX");
             tensRomanNumerals.Add(30, "XXX");
@@ -46,6 +48,7 @@ namespace RomanNumeralsKata
         {
             var hundredsRomanNumerals = new Dictionary<int, string>();
 
+            hundredsRomanNumerals.Add(0, "");
             hundredsRomanNumerals.Add(100, "C");
             hundredsRomanNumerals.Add(200, "CC");
             hundredsRomanNumerals.Add(300, "CCC");
@@ -63,6 +66,7 @@ namespace RomanNumeralsKata
         {
             var thousandsRomanNumerals = new Dictionary<int, string>();
 
+            thousandsRomanNumerals.Add(0, "");
             thousandsRomanNumerals.Add(1000, "M");
             thousandsRomanNumerals.Add(2000, "MM");
 

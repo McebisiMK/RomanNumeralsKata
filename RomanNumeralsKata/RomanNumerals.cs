@@ -22,26 +22,10 @@ namespace RomanNumeralsKata
             var tens = GetTens(number, units);
             var hundreds = GetHundreds(number, units, tens);
             var thousands = GetThousands(number, units, tens, hundreds);
-            var unitNumeral = "";
-            var tensNumeral = "";
-            var hundredsNumeral = "";
-            var thousandsNumeral = "";
-            if (units > 0)
-            {
-                unitNumeral = _romanNumeralsDataService.GetUnitsRomanNumeral(units);
-            }
-            if (tens > 0)
-            {
-                tensNumeral = _romanNumeralsDataService.GetTensRomanNumeral(tens);
-            }
-            if (hundreds > 0)
-            {
-                hundredsNumeral = _romanNumeralsDataService.GetHundredsRomanNumeral(hundreds);
-            }
-            if (thousands > 0)
-            {
-                thousandsNumeral = _romanNumeralsDataService.GetThousandsRomanNumeral(thousands);
-            }
+            var unitNumeral = _romanNumeralsDataService.GetUnitsRomanNumeral(units);
+            var tensNumeral = _romanNumeralsDataService.GetTensRomanNumeral(tens);
+            var hundredsNumeral = _romanNumeralsDataService.GetHundredsRomanNumeral(hundreds);
+            var thousandsNumeral = _romanNumeralsDataService.GetThousandsRomanNumeral(thousands);
 
             return $"{thousandsNumeral}{hundredsNumeral}{tensNumeral}{unitNumeral}";
         }
