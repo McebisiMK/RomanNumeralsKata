@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace RomanNumeralsKata
+﻿namespace RomanNumeralsKata
 {
     public class RomanNumeralsService
     {
         private IRomanNumeralsRepository romanNumeralsRepository;
 
-        public RomanNumeralsService(): this(new RomanNumeralsRepository())
+        public RomanNumeralsService() : this(new RomanNumeralsRepository())
         {
 
         }
@@ -19,7 +17,7 @@ namespace RomanNumeralsKata
         public string GetRomanNumeral(int number)
         {
             var units = getUnits(number);
-            var tens = getTens(number,units);
+            var tens = getTens(number, units);
             var hundreds = getHundreds(number, tens, units);
             var thousands = getThousands(number, hundreds, tens, units);
             var unitsNumerals = romanNumeralsRepository.GetUnitNumerals(units);
@@ -37,10 +35,10 @@ namespace RomanNumeralsKata
 
         private int getHundreds(int number, int tens, int units)
         {
-            return (((number % 1000)- tens) - units);
+            return (((number % 1000) - tens) - units);
         }
 
-        private int getTens(int number,int units)
+        private int getTens(int number, int units)
         {
             return (((number % 1000) % 100) - units);
         }
