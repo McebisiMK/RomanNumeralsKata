@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRomanNumerals.cs" />
+    <Compile Include="IRomanNumeralsRepository.cs" />
     <Compile Include="RomanNumeralsRepository.cs" />
     <Compile Include="RomanNumeralsService.cs" />
     <Compile Include="RomanNumeralsTests.cs" />
