@@ -1,4 +1,6 @@
-﻿namespace RomanNumeralsKata
+﻿using System;
+
+namespace RomanNumeralsKata
 {
     public class RomanNumeralsService
     {
@@ -20,6 +22,13 @@
             var tens = getTens(number, units);
             var hundreds = getHundreds(number, tens, units);
             var thousands = getThousands(number, hundreds, tens, units);
+            var romanNumeral = getRomanNumber(thousands, hundreds, tens, units);
+
+            return romanNumeral;
+        }
+
+        private string getRomanNumber(int thousands, int hundreds, int tens, int units)
+        {
             var unitsNumerals = romanNumeralsRepository.GetUnitNumerals(units);
             var tensNumerals = romanNumeralsRepository.GetTensNumerals(tens);
             var hundredsNumerals = romanNumeralsRepository.GetHundredsNumerals(hundreds);
