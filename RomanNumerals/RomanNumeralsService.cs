@@ -18,13 +18,22 @@ namespace RomanNumeralsKata
 
         public string GetRomanNumeral(int number)
         {
-            var units = getUnits(number);
-            var tens = getTens(number, units);
-            var hundreds = getHundreds(number, tens, units);
-            var thousands = getThousands(number, hundreds, tens, units);
-            var romanNumeral = getRomanNumber(thousands, hundreds, tens, units);
+            if (Valid(number))
+            {
+                var units = getUnits(number);
+                var tens = getTens(number, units);
+                var hundreds = getHundreds(number, tens, units);
+                var thousands = getThousands(number, hundreds, tens, units);
+                var romanNumeral = getRomanNumber(thousands, hundreds, tens, units);
 
-            return romanNumeral;
+                return romanNumeral;
+            }
+            return string.Empty;
+        }
+
+        private bool Valid(int number)
+        {
+            return number > 0 && number < 4000;
         }
 
         private string getRomanNumber(int thousands, int hundreds, int tens, int units)
