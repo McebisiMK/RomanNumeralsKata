@@ -127,6 +127,20 @@ namespace RomanNumeralsKata
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(0,"")]
+        [TestCase(-5,"")]
+        [TestCase(4000,"")]
+        public void GetRomanNumeral_GivenInvalidNumber_ShouldReturnEmptyString(int number, string expected)
+        {
+            //-------------------Arrange-------------------------------
+            var romanNumeralsService = CreateRomanNumeralsService();
+
+            //-------------------Act-----------------------------------
+            var actual = romanNumeralsService.GetRomanNumeral(number);
+            //-------------------Assert--------------------------------
+            Assert.AreEqual(expected, actual);
+        }
+
         private static RomanNumeralsService CreateRomanNumeralsService()
         {
             return new RomanNumeralsService();
