@@ -6,11 +6,6 @@ namespace RomanNumeralsKata
     {
         private IRomanNumeralsRepository romanNumeralsRepository;
 
-        //public RomanNumeralsService() : this(new RomanNumeralsRepository())
-        //{
-
-        //}
-
         public RomanNumeralsService(IRomanNumeralsRepository romanNumeralsRepository)
         {
             this.romanNumeralsRepository = romanNumeralsRepository;
