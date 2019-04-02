@@ -143,7 +143,7 @@ namespace RomanNumeralsKata
 
         private static RomanNumeralsService CreateRomanNumeralsService()
         {
-            return new RomanNumeralsService();
+            return new RomanNumeralsService(new RomanNumeralsRepository());
         }
     }
 }

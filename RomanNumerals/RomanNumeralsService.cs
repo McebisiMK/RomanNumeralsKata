@@ -6,12 +6,12 @@ namespace RomanNumeralsKata
     {
         private IRomanNumeralsRepository romanNumeralsRepository;
 
-        public RomanNumeralsService() : this(new RomanNumeralsRepository())
-        {
+        //public RomanNumeralsService() : this(new RomanNumeralsRepository())
+        //{
 
-        }
+        //}
 
-        public RomanNumeralsService(RomanNumeralsRepository romanNumeralsRepository)
+        public RomanNumeralsService(IRomanNumeralsRepository romanNumeralsRepository)
         {
             this.romanNumeralsRepository = romanNumeralsRepository;
         }
@@ -33,7 +33,7 @@ namespace RomanNumeralsKata
 
         private bool Valid(int number)
         {
-            return number >= 0 && number < 4000;
+            return (number >= 0 && number < 4000);
         }
 
         private string getRomanNumber(int thousands, int hundreds, int tens, int units)
